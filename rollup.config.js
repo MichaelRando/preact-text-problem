@@ -35,6 +35,10 @@ function configurate(outputFile, aliases) {
         // module path is not given explicitly, rollup will search
         // for them here.
         include: ['node_modules/**'],
+        namedExports: {
+          'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement'],
+          'node_modules/react-dom/index.js': ['render']
+        }
       }),
 
       babel({

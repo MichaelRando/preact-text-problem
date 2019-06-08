@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import SignIn from './components/SignIn'
+import { Provider, connect } from 'react-redux'
+import SignUpView from './components/SignUpView'
+import { createTheStore } from './redux/create'
 
 class Main extends React.Component {
 
@@ -28,13 +30,21 @@ class Main extends React.Component {
           onClick={this.handleClick}>
           Sign In
         </button>
-        <SignIn close={this.close} show={this.state.showSignIn}/>
+        <SignUpView close={this.close} show={this.state.showSignIn}/>
       </div>
     )
   }
 }
 
+function mapStateToProps(appState) {
+  return {}
+}
+const ConnectedApp = connect(mapStateToProps, {})(Main)
+const store = createTheStore()
+
 ReactDOM.render(
-  <Main />,
+  <Provider store={store}>
+    <ConnectedApp/>
+  </Provider>,
   document.getElementById('contentLayer')
 )
