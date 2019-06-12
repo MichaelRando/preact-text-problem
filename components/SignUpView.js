@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux/src'
+import { connect } from 'react-redux'
 import { ModalDialog } from './Dialog'
 import SignUpForm from './SignUpForm'
 

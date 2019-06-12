@@ -7,7 +7,7 @@
     "react": "npm-run-all -p build serve-react"
   },
   "dependencies": {
-    "preact": "^10.0.0-beta.2",
+    "preact": "github:preactjs/preact#f36535d1e7d",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^4.4.10",

@@ -1,7 +1,7 @@
 import React from 'react'
 import { clearCreateFormData, preserveCreateFormData } from '../redux/modules/user'
 import Input from './Input'
-import { connect } from 'react-redux/src'
+import { connect } from 'react-redux'
 
 const emailAddressRegex = /^[A-Z0-9._%+-]{1,30}@[A-Z0-9.-]{1,50}\.[A-Z]{2,18}$/i
 const passwordRegex = /.{8,100}/i
