@@ -2,23 +2,47 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider, connect } from 'react-redux'
 import SignUpView from './components/SignUpView'
+import SignIn from './components/SignInView'
 import { createTheStore } from './redux/create'
 
 class Main extends React.Component {
 
   state = {
-    showSignIn: false
+    signIn: false,
+    signUp: false
   }
 
-  handleClick = () => {
+  showSignIn = () => {
     this.setState((prevState) => {
-      return {showSignIn: true}
+      console.log('showSignIn')
+      return {
+        signIn: true,
+        signUp: false
+      }
     })
   }
 
-  close = () => {
+  showSignUp = () => {
     this.setState((prevState) => {
-      return {showSignIn: false}
+      console.log('showSignUp')
+      return {
+        signIn: false,
+        signUp: true
+      }
+    })
+  }
+
+  closeSignIn = () => {
+    this.setState((prevState) => {
+      console.log('closeSignIn')
+      return {signIn: false}
+    })
+  }
+
+  closeSignUp = () => {
+    this.setState((prevState) => {
+      console.log('closeSignUp')
+      return {signUp: false}
     })
   }
 
@@ -27,10 +51,11 @@ class Main extends React.Component {
       <div>
         <button
           type='submit'
-          onClick={this.handleClick}>
-          Sign In
+          onClick={this.showSignUp}>
+          Sign Up
         </button>
-        <SignUpView close={this.close} show={this.state.showSignIn}/>
+        <SignUpView close={this.closeSignUp} show={this.state.signUp} showSignIn={this.showSignIn}/>
+        <SignIn close={this.closeSignIn} show={this.state.signIn}/>
       </div>
     )
   }

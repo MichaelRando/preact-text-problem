@@ -50,30 +50,29 @@ export default class Input extends React.Component {
     }
   }
 
-  // /*  This fixes the bug being described  */
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   for (let i in nextProps) {
-  //     if (nextProps[i] !== this.props[i]) {
-  //       return true
-  //     }
-  //   }
-  //   for (let i in nextState) {
-  //     if (nextState[i] !== this.state[i]) {
-  //       return true
-  //     }
-  //   }
-  //   for (let i in this.props) {
-  //     if (!(i in nextProps)) {
-  //       return true
-  //     }
-  //   }
-  //   for (let i in this.state) {
-  //     if (!(i in nextState)) {
-  //       return true
-  //     }
-  //   }
-  //   return false
-  // }
+  shouldComponentUpdate(nextProps, nextState) {
+    for (let i in nextProps) {
+      if (nextProps[i] !== this.props[i]) {
+        return true
+      }
+    }
+    for (let i in nextState) {
+      if (nextState[i] !== this.state[i]) {
+        return true
+      }
+    }
+    for (let i in this.props) {
+      if (!(i in nextProps)) {
+        return true
+      }
+    }
+    for (let i in this.state) {
+      if (!(i in nextState)) {
+        return true
+      }
+    }
+    return false
+  }
 
   onInput = (event) => {
     let value = event.currentTarget.value

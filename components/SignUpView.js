@@ -19,6 +19,7 @@ const SignUpView = ModalDialog => class extends React.Component {
       >
         <SignUpForm
           close={this.onCloseClick}
+          showSignIn={this.props.showSignIn}
         />
       </ModalDialog>
     )

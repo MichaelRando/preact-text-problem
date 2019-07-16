@@ -81,6 +81,11 @@ class SignUpForm extends React.Component {
         <div style={{ textAlign: 'center', padding: '15px 15px 20px', fontSize: 12 }}>
           {' '}
         </div>
+        <button
+          type='submit'
+          onClick={this.props.showSignIn}>
+          Sign In
+        </button>
         <form onSubmit={this.handleSubmit}>
           <div className={`panel`}
                style={{ textAlign: 'left', marginBottom: '0', paddingBottom: '10px' }}
@@ -172,7 +177,7 @@ class SignUpForm extends React.Component {
 }
 const mapStateToProps = (appState) => {
   return {
-    user: appState.user,
+    user: appState.user
   }
 }
 
